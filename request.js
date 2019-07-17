@@ -10,7 +10,8 @@ exports.doAPOD = async (req, res) => {
     const today = new Date()
     const [currentMonth, currentDay, currentYear] = today.toLocaleDateString('en-GB').split("/")
     let minimum, maximum;
-    if (currentMonth >= selectedMonth && currentDay >= selectedDay) {
+    const later = currentMonth > selectedMonth || (currentMonth == selectedMonth && currentDay > selectedDay);
+    if (later) {
       minimum = 0;
       maximum = minimum + numberOfYears;
     } else {
