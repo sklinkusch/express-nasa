@@ -3,17 +3,17 @@ const axios = require('axios');
 const api_key = "ToMkX8ppOaHwLbx4nhHegwzkGi6HUo3BhhMAV8A1";
 exports.doRequest = async (req, res) => {
   let apiUrl;
-  const { date: sampleDate } = req.query;
+  const { date: sampleDate, years: numberOfYears } = req.query;
   const [selectedMonth, selectedDay] = sampleDate.split("-");
   const today = new Date()
   const [currentMonth, currentDay, currentYear] = today.toLocaleDateString('en-GB').split("/")
   let minimum, maximum;
   if (currentMonth >= selectedMonth && currentDay >= selectedDay) {
     minimum = 0;
-    maximum = 5;
+    maximum = minimum + numberOfYears;
   } else {
     minimum = 1;
-    maximum = 6;
+    maximum = minimum + numberOfYears;
   }
   const apods = [];
   for (let i = minimum; i < maximum; i++) {
