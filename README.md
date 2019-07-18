@@ -1051,3 +1051,36 @@ Output:
 ]
 ```
 
+### Troubleshooting
+
+In this section, common error messages are explained.
+
+#### You have to provide a date in your query
+
+This means, you tried to get the astronomy pictures of the day (APOD) without telling the date. The minimum input is
+
+```
+https://localhost:3000/apod?date=01-21
+```
+for the 21<sup>st</sup> of January. You may also state an optional years parameter, the input changes to
+
+```
+https://localhost:3000/apod?date=01-21&years=3
+```
+
+#### The date has to be in the format MM-DD, e.g. 04-01 for the 1st of April.
+
+You provided a date that was in the wrong format. The date consists of a two-digit month, followed by a '-' sign and a two-digit day.
+
+#### The request could not be fulfilled. Please try again later.
+
+You tried to make a request, which did not work for some reason although the input was well-formed. It is not your fault, but maybe something is wrong with the NASA server.
+
+#### The endpoint you selected does not exist. Please refer to the manual on https://github.com/sklinkusch/color-nasa.
+
+You tried to access an endpoint that does not exist. The working endpoints are:
+
+```
+https://localhost:3000/apod
+https://localhost:3000/asteroids
+```
