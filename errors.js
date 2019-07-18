@@ -8,7 +8,7 @@ exports.dateInInput = (req, res, next) => {
 
 exports.checkDateFormat = (req, res, next) => {
   const { date } = req.query;
-  if (/^[0-9]{2}-[0-9]{2}$/.test(date)) {
+  if (/^[01][0-9]-[0123][0-9]{2}$/.test(date)) {
     next();
   } else {
     return res.status(400).json({ error: { message: "The date has to be in the format MM-DD, e.g. 04-01 for the 1st of April." } });
