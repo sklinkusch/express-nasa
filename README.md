@@ -1,8 +1,11 @@
 # express-nasa
 
+**_dedicated to captain Leandro Frigerio, the cleaner of the ~~space~~ sea_**
+
 ## Features
 
 It consumes the [NASA API](https://api.nasa.gov/index.html) to get the following astronomic data
+
 - data for the "Astronomy Picture of the Day (APOD)" for a given date
 - data for all asteroids close to the earth during the last week
 
@@ -35,6 +38,7 @@ Input:
 https://localhost:3000/apod?date=$DATE&years=$YEARS or
 https://localhost:3000/apod?date=$DATE
 ```
+
 If the years parameter is omitted, it is set to a default value of five years.
 
 Example:
@@ -127,6 +131,7 @@ Input:
 https://express-nasa.sklinkusch.now.sh/apod?date=$DATE&years=$YEARS or
 https://express-nasa.sklinkusch.now.sh/apod?date=$DATE
 ```
+
 If the years parameter is omitted, it is set to a default value of five years.
 
 Example:
@@ -211,6 +216,7 @@ This means, you tried to get the astronomy pictures of the day (APOD) without te
 ```
 https://localhost:3000/apod?date=01-21
 ```
+
 for the 21<sup>st</sup> of January. You may also state an optional years parameter, the input changes to
 
 ```
